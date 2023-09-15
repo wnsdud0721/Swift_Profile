@@ -1,33 +1,30 @@
 //
-//  ProfileDesignViewController.swift
+//  ProfileDesignView.swift
 //  Profile
 //
-//  Created by Junyoung_Hong on 2023/09/13.
+//  Created by Junyoung_Hong on 2023/09/15.
 //
 
 import UIKit
-import SwiftUI
 import SnapKit
 
-class ProfileDesignViewController: UIViewController {
+class ProfileDesignView: UIView {
     
-    let imageNames = ["picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7", "picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7"]
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         configureUI()
         addSubView()
         addStackView()
         autoLayout()
-        buttonAction()
-        
-        galleryCollectionView.delegate = self
-        galleryCollectionView.dataSource = self
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // 제목
-    private let titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "nabaecamp"
         label.textColor = UIColor.black
@@ -36,14 +33,14 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // 프로필 이동 버튼
-    private let menuButton: UIButton = {
+    private(set) lazy var menuButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Menu"), for: .normal)
         return button
     }()
     
     // 사용자 프로필 사진
-    private let profileImageView: UIImageView = {
+    private(set) lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -55,7 +52,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // post 수
-    private let postCount: UILabel = {
+    private(set) lazy var postCount: UILabel = {
         let label = UILabel()
         label.textColor = UIColor.black
         label.font = UIFont.bold16
@@ -63,7 +60,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // post
-    private let post: UILabel = {
+    private(set) lazy var post: UILabel = {
         let label = UILabel()
         label.text = "post"
         label.textColor = UIColor.black
@@ -72,7 +69,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // post 스택뷰
-    private let postStackView: UIStackView = {
+    private(set) lazy var postStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -81,7 +78,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // follower 수
-    private let followerCount: UILabel = {
+    private(set) lazy var followerCount: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.textColor = UIColor.black
@@ -90,7 +87,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // follower
-    private let follower: UILabel = {
+    private(set) lazy var follower: UILabel = {
         let label = UILabel()
         label.text = "follower"
         label.textColor = UIColor.black
@@ -99,7 +96,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // follower 스택뷰
-    private let followerStackView: UIStackView = {
+    private(set) lazy var followerStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -108,7 +105,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // following 수
-    private let followingCount: UILabel = {
+    private(set) lazy var followingCount: UILabel = {
         let label = UILabel()
         label.text = "0"
         label.textColor = UIColor.black
@@ -117,7 +114,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // following
-    private let following: UILabel = {
+    private(set) lazy var following: UILabel = {
         let label = UILabel()
         label.text = "following"
         label.textColor = UIColor.black
@@ -126,7 +123,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // following 스택뷰
-    private let followingStackView: UIStackView = {
+    private(set) lazy var followingStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .center
@@ -135,7 +132,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // userfollowinfo 스택뷰
-    private let userFollowInfoStackView: UIStackView = {
+    private(set) lazy var userFollowInfoStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -144,7 +141,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // 사용자 이름
-    private let userName: UILabel = {
+    private(set) lazy var userName: UILabel = {
         let label = UILabel()
         label.text = "르탄이"
         label.textColor = UIColor.black
@@ -153,7 +150,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // 자기소개
-    private let introduce: UILabel = {
+    private(set) lazy var introduce: UILabel = {
         let label = UILabel()
         label.text = "iOS Developer 🍎"
         label.textColor = UIColor.black
@@ -162,7 +159,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // 주소
-    private let link: UILabel = {
+    private(set) lazy var link: UILabel = {
         let label = UILabel()
         label.text = "spartacodingclub.kr"
         label.textColor = UIColor(red: 0.061, green: 0.274, blue: 0.492, alpha: 1)
@@ -171,7 +168,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // Follow 버튼
-    private let followButton: UIButton = {
+    private(set) lazy var followButton: UIButton = {
         let button = UIButton()
         button.setTitle("Follow", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
@@ -183,7 +180,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // Message 버튼
-    private let messageButton: UIButton = {
+    private(set) lazy var messageButton: UIButton = {
         let button = UIButton()
         button.setTitle("Message", for: .normal)
         button.setTitleColor(UIColor.black, for: .normal)
@@ -197,7 +194,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // More 버튼
-    private let moreButton: UIButton = {
+    private(set) lazy var moreButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "More"), for: .normal)
         button.snp.makeConstraints { make in
@@ -207,7 +204,7 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // middleBar 스택뷰
-    private let middleBarStackView: UIStackView = {
+    private(set) lazy var middleBarStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .fill
@@ -217,33 +214,34 @@ class ProfileDesignViewController: UIViewController {
     }()
     
     // 구분선
-    private let divideLine: UIView = {
+    private(set) lazy var divideLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor(red: 0.859, green: 0.859, blue: 0.859, alpha: 1)
         return view
     }()
     
     // gallery 버튼과 선 포함 View
-    private let containerGallery: UIView = {
+    private(set) lazy var containerGallery: UIView = {
         let view = UIView()
         return view
     }()
     
     // gallery 버튼
-    private let galleryButton: UIButton = {
+    private(set) lazy var galleryButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Grid"), for: .normal)
         return button
     }()
     
     // gallery 버튼 선
-    private let galleryLine: UIView = {
+    private(set) lazy var galleryLine: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.black
         return view
     }()
     
-    private let galleryCollectionView: UICollectionView = {
+    // gallery 컬렉션 뷰
+    private(set) lazy var galleryCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -251,43 +249,42 @@ class ProfileDesignViewController: UIViewController {
         return collectionView
     }()
     
-    private let profileButton: UIButton = {
+    // profileVC 이동 버튼
+    private(set) lazy var profileButton: UIButton = {
         let button = UIButton()
         button.setImage(UIImage(named: "Profile - Fill"), for: .normal)
         return button
     }()
 }
 
-// UI 관련 extension
-extension ProfileDesignViewController {
+private extension ProfileDesignView {
     
-    private func configureUI() {
-        view.backgroundColor = UIColor.white
+    func configureUI() {
+        backgroundColor = UIColor.white
     }
     
-    private func addSubView() {
-        view.addSubview(titleLabel)
-        view.addSubview(menuButton)
-        view.addSubview(profileImageView)
-        view.addSubview(userFollowInfoStackView)
-        view.addSubview(userName)
-        view.addSubview(introduce)
-        view.addSubview(link)
-        view.addSubview(middleBarStackView)
-        view.addSubview(divideLine)
-        view.addSubview(containerGallery)
-        view.addSubview(galleryCollectionView)
-        view.addSubview(profileButton)
+    func addSubView() {
+        addSubview(titleLabel)
+        addSubview(menuButton)
+        addSubview(profileImageView)
+        addSubview(userFollowInfoStackView)
+        addSubview(userName)
+        addSubview(introduce)
+        addSubview(link)
+        addSubview(middleBarStackView)
+        addSubview(divideLine)
+        addSubview(containerGallery)
+        addSubview(galleryCollectionView)
+        addSubview(profileButton)
         
         containerGallery.addSubview(galleryButton)
         containerGallery.addSubview(galleryLine)
     }
     
-    private func addStackView() {
+    func addStackView() {
         
         postStackView.addArrangedSubview(postCount)
         postStackView.addArrangedSubview(post)
-        postCount.text = String(imageNames.count)
         
         followerStackView.addArrangedSubview(followerCount)
         followerStackView.addArrangedSubview(follower)
@@ -311,63 +308,63 @@ extension ProfileDesignViewController {
     private func autoLayout() {
         
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
-            make.centerX.equalTo(view.snp.centerX)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(14)
+            make.centerX.equalTo(snp.centerX)
         }
         
         menuButton.snp.makeConstraints { make in
-            make.trailing.equalTo(view.snp.trailing).offset(-15)
+            make.trailing.equalTo(snp.trailing).offset(-15)
             make.centerY.equalTo(titleLabel.snp.centerY)
         }
         
         profileImageView.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(14)
-            make.leading.equalTo(view.snp.leading).offset(14)
+            make.leading.equalTo(snp.leading).offset(14)
             make.width.height.equalTo(80)
         }
         
         userFollowInfoStackView.snp.makeConstraints { make in
             make.leading.equalTo(profileImageView.snp.trailing).offset(41)
-            make.trailing.equalTo(view.snp.trailing).offset(-28)
+            make.trailing.equalTo(snp.trailing).offset(-28)
             make.centerY.equalTo(profileImageView.snp.centerY)
         }
         
         userName.snp.makeConstraints { make in
             make.top.equalTo(profileImageView.snp.bottom).offset(14)
-            make.leading.equalTo(view.snp.leading).offset(15)
-            make.trailing.equalTo(view.snp.trailing).offset(15)
+            make.leading.equalTo(snp.leading).offset(15)
+            make.trailing.equalTo(snp.trailing).offset(15)
         }
         
         introduce.snp.makeConstraints { make in
             make.top.equalTo(userName.snp.bottom).offset(2)
-            make.leading.equalTo(view.snp.leading).offset(15)
-            make.trailing.equalTo(view.snp.trailing).offset(15)
+            make.leading.equalTo(snp.leading).offset(15)
+            make.trailing.equalTo(snp.trailing).offset(15)
         }
         
         link.snp.makeConstraints { make in
             make.top.equalTo(introduce.snp.bottom)
-            make.leading.equalTo(view.snp.leading).offset(15)
-            make.trailing.equalTo(view.snp.trailing).offset(15)
+            make.leading.equalTo(snp.leading).offset(15)
+            make.trailing.equalTo(snp.trailing).offset(15)
         }
         
         middleBarStackView.snp.makeConstraints { make in
             make.top.equalTo(link.snp.bottom).offset(11)
-            make.leading.equalTo(view.snp.leading).offset(15)
-            make.trailing.equalTo(view.snp.trailing).offset(-15)
+            make.leading.equalTo(snp.leading).offset(15)
+            make.trailing.equalTo(snp.trailing).offset(-15)
             make.height.equalTo(30)
         }
         
         divideLine.snp.makeConstraints { make in
             make.top.equalTo(middleBarStackView.snp.bottom).offset(10)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
+            make.leading.equalTo(snp.leading)
+            make.trailing.equalTo(snp.trailing)
             make.height.equalTo(0.5)
         }
         
         containerGallery.snp.makeConstraints { make in
             make.top.equalTo(divideLine.snp.bottom)
-            make.leading.equalTo(view.snp.leading)
-            make.width.equalTo(view.snp.width).offset(-1.5).dividedBy(3)
+            make.leading.equalTo(snp.leading)
+            make.width.equalTo(snp.width).offset(-1.5).dividedBy(3)
             make.height.equalTo(41)
         }
         
@@ -387,71 +384,16 @@ extension ProfileDesignViewController {
         
         galleryCollectionView.snp.makeConstraints { make in
             make.top.equalTo(containerGallery.snp.bottom).offset(2)
-            make.leading.equalTo(view.snp.leading)
-            make.trailing.equalTo(view.snp.trailing)
+            make.leading.equalTo(snp.leading)
+            make.trailing.equalTo(snp.trailing)
         }
         
         profileButton.snp.makeConstraints { make in
             make.top.equalTo(galleryCollectionView.snp.bottom).offset(18)
-            make.centerX.equalTo(view.snp.centerX)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.centerX.equalTo(snp.centerX)
+            make.bottom.equalTo(safeAreaLayoutGuide.snp.bottom)
             make.width.equalTo(22.5)
             make.height.equalTo(22.75)
         }
-    }
-}
-
-extension ProfileDesignViewController {
-    
-    private func buttonAction() {
-        profileButton.addTarget(self, action: #selector(moveProfileVC), for: .touchUpInside)
-    }
-    
-    @objc func moveProfileVC() {
-        let profileVC = ProfileViewController()
-        profileVC.modalTransitionStyle = .coverVertical
-        profileVC.modalPresentationStyle = .fullScreen
-        self.present(profileVC, animated: true, completion: nil)
-    }
-}
-
-extension ProfileDesignViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageNames.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.identifier, for: indexPath) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
-        
-        let imageName = imageNames[indexPath.item]
-        if let image = UIImage(named: imageName) {
-            cell.postImageView.image = image
-        }
-        return cell
-    }
-}
-
-extension ProfileDesignViewController: UICollectionViewDelegateFlowLayout {
-    
-    // CollectionView Cell의 사이즈
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (collectionView.bounds.width - 4)/3, height: (collectionView.bounds.width - 4)/3)
-    }
-    
-    // 수평
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-    
-    // 수직
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 2
-    }
-}
-
-// Preview를 위한 구조체
-struct ProfileDesignVC_Preview: PreviewProvider {
-    static var previews: some View {
-        ProfileDesignViewController().toPreview().edgesIgnoringSafeArea(.all)
     }
 }

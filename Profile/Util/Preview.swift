@@ -5,7 +5,6 @@
 //  Created by Junyoung_Hong on 2023/09/13.
 //
 
-import Foundation
 import SwiftUI
 
 #if DEBUG

@@ -20,6 +20,10 @@
 		1003B4462AB1855C0044AC54 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003B4452AB1855C0044AC54 /* ProfileViewController.swift */; };
 		1003B4482AB187480044AC54 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1003B4472AB187480044AC54 /* OpenSans-Bold.ttf */; };
 		10438EBF2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */; };
+		10438EC32AB42E8C0056A407 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC22AB42E8C0056A407 /* MainView.swift */; };
+		10438EC62AB457610056A407 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC52AB457610056A407 /* UserData.swift */; };
+		10438ECA2AB45E6E0056A407 /* ProfileDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */; };
+		10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438ECB2AB461D40056A407 /* ProfileView.swift */; };
 		10CF3A422AB2D83C006EBC96 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */; };
 		10CF3A442AB35102006EBC96 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3A432AB35102006EBC96 /* Label.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +43,10 @@
 		1003B4452AB1855C0044AC54 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1003B4472AB187480044AC54 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		10438EC22AB42E8C0056A407 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		10438EC52AB457610056A407 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignView.swift; sourceTree = "<group>"; };
+		10438ECB2AB461D40056A407 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		10CF3A432AB35102006EBC96 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,12 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				1003B43E2AB184520044AC54 /* Util */,
+				10438EC42AB456F30056A407 /* Model */,
+				10438EC72AB45E3F0056A407 /* View */,
+				10438EC82AB45E4E0056A407 /* Controller */,
 				1003B4272AB162800044AC54 /* AppDelegate.swift */,
 				1003B4292AB162800044AC54 /* SceneDelegate.swift */,
-				1003B42B2AB162800044AC54 /* MainViewController.swift */,
-				1003B4432AB185260044AC54 /* ProfileDesignViewController.swift */,
-				10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */,
-				1003B4452AB1855C0044AC54 /* ProfileViewController.swift */,
 				1003B42D2AB162800044AC54 /* Main.storyboard */,
 				1003B4302AB162810044AC54 /* Assets.xcassets */,
 				1003B4322AB162810044AC54 /* LaunchScreen.storyboard */,
@@ -99,6 +106,35 @@
 				10CF3A432AB35102006EBC96 /* Label.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		10438EC42AB456F30056A407 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10438EC52AB457610056A407 /* UserData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10438EC72AB45E3F0056A407 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10438EC22AB42E8C0056A407 /* MainView.swift */,
+				10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */,
+				10438ECB2AB461D40056A407 /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10438EC82AB45E4E0056A407 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1003B42B2AB162800044AC54 /* MainViewController.swift */,
+				1003B4432AB185260044AC54 /* ProfileDesignViewController.swift */,
+				1003B4452AB1855C0044AC54 /* ProfileViewController.swift */,
+				10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,11 +217,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1003B4402AB184800044AC54 /* Font.swift in Sources */,
+				10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */,
 				1003B42C2AB162800044AC54 /* MainViewController.swift in Sources */,
 				1003B4442AB185260044AC54 /* ProfileDesignViewController.swift in Sources */,
+				10438EC32AB42E8C0056A407 /* MainView.swift in Sources */,
 				1003B4422AB1848A0044AC54 /* Preview.swift in Sources */,
+				10438EC62AB457610056A407 /* UserData.swift in Sources */,
 				1003B4462AB1855C0044AC54 /* ProfileViewController.swift in Sources */,
 				1003B4282AB162800044AC54 /* AppDelegate.swift in Sources */,
+				10438ECA2AB45E6E0056A407 /* ProfileDesignView.swift in Sources */,
 				10CF3A442AB35102006EBC96 /* Label.swift in Sources */,
 				10438EBF2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift in Sources */,
 				1003B42A2AB162800044AC54 /* SceneDelegate.swift in Sources */,
