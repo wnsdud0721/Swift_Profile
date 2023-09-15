@@ -57,7 +57,6 @@ class ProfileDesignViewController: UIViewController {
     // post 수
     private let postCount: UILabel = {
         let label = UILabel()
-        label.text = "7"
         label.textColor = UIColor.black
         label.font = UIFont.bold16
         return label
@@ -288,6 +287,7 @@ extension ProfileDesignViewController {
         
         postStackView.addArrangedSubview(postCount)
         postStackView.addArrangedSubview(post)
+        postCount.text = String(imageNames.count)
         
         followerStackView.addArrangedSubview(followerCount)
         followerStackView.addArrangedSubview(follower)
@@ -367,7 +367,7 @@ extension ProfileDesignViewController {
         containerGallery.snp.makeConstraints { make in
             make.top.equalTo(divideLine.snp.bottom)
             make.leading.equalTo(view.snp.leading)
-            make.width.equalTo(view.snp.width).dividedBy(3)
+            make.width.equalTo(view.snp.width).offset(-1.5).dividedBy(3)
             make.height.equalTo(41)
         }
         
