@@ -39,6 +39,14 @@ class ProfileDesignView: UIView {
         return button
     }()
     
+    // 뒤로가기 버튼
+    private(set) lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
+        button.tintColor = UIColor.black
+        return button
+    }()
+    
     // 사용자 프로필 사진
     private(set) lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
@@ -266,6 +274,7 @@ private extension ProfileDesignView {
     func addSubView() {
         addSubview(titleLabel)
         addSubview(menuButton)
+        addSubview(backButton)
         addSubview(profileImageView)
         addSubview(userFollowInfoStackView)
         addSubview(userName)
@@ -314,6 +323,11 @@ private extension ProfileDesignView {
         
         menuButton.snp.makeConstraints { make in
             make.trailing.equalTo(snp.trailing).offset(-15)
+            make.centerY.equalTo(titleLabel.snp.centerY)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.leading.equalTo(snp.leading).offset(15)
             make.centerY.equalTo(titleLabel.snp.centerY)
         }
         

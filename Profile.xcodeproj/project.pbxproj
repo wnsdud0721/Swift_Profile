@@ -19,13 +19,16 @@
 		1003B4442AB185260044AC54 /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003B4432AB185260044AC54 /* ProfileDesignViewController.swift */; };
 		1003B4462AB1855C0044AC54 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1003B4452AB1855C0044AC54 /* ProfileViewController.swift */; };
 		1003B4482AB187480044AC54 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1003B4472AB187480044AC54 /* OpenSans-Bold.ttf */; };
+		102B97BB2ABB0DB80078217A /* CreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B97BA2ABB0DB80078217A /* CreateView.swift */; };
+		102B97BD2ABB0DCF0078217A /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B97BC2ABB0DCF0078217A /* CreateViewController.swift */; };
+		102B97BF2ABB13400078217A /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102B97BE2ABB13400078217A /* MainTableViewCell.swift */; };
 		10438EBF2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */; };
 		10438EC32AB42E8C0056A407 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC22AB42E8C0056A407 /* MainView.swift */; };
 		10438EC62AB457610056A407 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC52AB457610056A407 /* UserData.swift */; };
 		10438ECA2AB45E6E0056A407 /* ProfileDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */; };
 		10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438ECB2AB461D40056A407 /* ProfileView.swift */; };
+		104B108C2ABC25860011B9D7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B108B2ABC25860011B9D7 /* String.swift */; };
 		10CF3A422AB2D83C006EBC96 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */; };
-		10CF3A442AB35102006EBC96 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CF3A432AB35102006EBC96 /* Label.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,13 +45,16 @@
 		1003B4432AB185260044AC54 /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 		1003B4452AB1855C0044AC54 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1003B4472AB187480044AC54 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		102B97BA2ABB0DB80078217A /* CreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateView.swift; sourceTree = "<group>"; };
+		102B97BC2ABB0DCF0078217A /* CreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
+		102B97BE2ABB13400078217A /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		10438EC22AB42E8C0056A407 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		10438EC52AB457610056A407 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignView.swift; sourceTree = "<group>"; };
 		10438ECB2AB461D40056A407 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		104B108B2ABC25860011B9D7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		10CF3A432AB35102006EBC96 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,7 +109,7 @@
 			children = (
 				1003B43F2AB184800044AC54 /* Font.swift */,
 				1003B4412AB1848A0044AC54 /* Preview.swift */,
-				10CF3A432AB35102006EBC96 /* Label.swift */,
+				104B108B2ABC25860011B9D7 /* String.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -122,6 +128,7 @@
 				10438EC22AB42E8C0056A407 /* MainView.swift */,
 				10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */,
 				10438ECB2AB461D40056A407 /* ProfileView.swift */,
+				102B97BA2ABB0DB80078217A /* CreateView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -130,9 +137,11 @@
 			isa = PBXGroup;
 			children = (
 				1003B42B2AB162800044AC54 /* MainViewController.swift */,
+				102B97BE2ABB13400078217A /* MainTableViewCell.swift */,
 				1003B4432AB185260044AC54 /* ProfileDesignViewController.swift */,
 				1003B4452AB1855C0044AC54 /* ProfileViewController.swift */,
 				10438EBE2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift */,
+				102B97BC2ABB0DCF0078217A /* CreateViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -218,16 +227,19 @@
 			files = (
 				1003B4402AB184800044AC54 /* Font.swift in Sources */,
 				10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */,
+				102B97BD2ABB0DCF0078217A /* CreateViewController.swift in Sources */,
 				1003B42C2AB162800044AC54 /* MainViewController.swift in Sources */,
+				102B97BF2ABB13400078217A /* MainTableViewCell.swift in Sources */,
 				1003B4442AB185260044AC54 /* ProfileDesignViewController.swift in Sources */,
 				10438EC32AB42E8C0056A407 /* MainView.swift in Sources */,
 				1003B4422AB1848A0044AC54 /* Preview.swift in Sources */,
 				10438EC62AB457610056A407 /* UserData.swift in Sources */,
 				1003B4462AB1855C0044AC54 /* ProfileViewController.swift in Sources */,
+				102B97BB2ABB0DB80078217A /* CreateView.swift in Sources */,
 				1003B4282AB162800044AC54 /* AppDelegate.swift in Sources */,
 				10438ECA2AB45E6E0056A407 /* ProfileDesignView.swift in Sources */,
-				10CF3A442AB35102006EBC96 /* Label.swift in Sources */,
 				10438EBF2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift in Sources */,
+				104B108C2ABC25860011B9D7 /* String.swift in Sources */,
 				1003B42A2AB162800044AC54 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

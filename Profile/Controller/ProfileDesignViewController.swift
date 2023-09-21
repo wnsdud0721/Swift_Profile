@@ -13,8 +13,6 @@ class ProfileDesignViewController: UIViewController {
     
     private let profileDesignView = ProfileDesignView()
     
-    let imageNames = ["picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7", "picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7"]
-    
     override func loadView() {
         view = profileDesignView
     }
@@ -31,10 +29,11 @@ class ProfileDesignViewController: UIViewController {
     }
 }
 
-extension ProfileDesignViewController {
+private extension ProfileDesignViewController {
     
-    private func buttonAction() {
+    func buttonAction() {
         profileDesignView.profileButton.addTarget(self, action: #selector(moveProfileVC), for: .touchUpInside)
+        profileDesignView.backButton.addTarget(self, action: #selector(moveBack), for: .touchUpInside)
     }
     
     @objc func moveProfileVC() {
@@ -42,6 +41,10 @@ extension ProfileDesignViewController {
         profileVC.modalTransitionStyle = .coverVertical
         profileVC.modalPresentationStyle = .fullScreen
         self.present(profileVC, animated: true, completion: nil)
+    }
+    
+    @objc func moveBack() {
+        self.dismiss(animated: true)
     }
 }
 
