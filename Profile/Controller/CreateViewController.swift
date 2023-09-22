@@ -12,10 +12,7 @@ class CreateViewController: UIViewController {
     
     private let createView = CreateView()
     
-    static let identifier = "CreateViewController"
-    
     var editingMemoText: String?
-    
     var editingMemoIndex: Int?
     
     var isTextViewEdited = false
@@ -73,6 +70,18 @@ private extension CreateViewController {
         }
     }
     
+    // 새로운 메모 작성
+    @objc func finishButtonTappedNew() {
+        navigationController?.popViewController(animated: true)
+        
+        if isTextViewEdited {
+            let newMemoText = createView.createTextView.text
+            
+            // 새 메모를 생성하고 memoArray에 추가
+            addNewMemo(newMemoText ?? "")
+        }
+    }
+    
     // 메모 내용 수정
     @objc func finishButtonTappedEdit() {
         navigationController?.popViewController(animated: true)
@@ -80,9 +89,8 @@ private extension CreateViewController {
         if let updatedMemo = createView.createTextView.text, !updatedMemo.isEmpty,
            let index = editingMemoIndex {
             
-            // 해당 인덱스의 내용을 새로운 메모 내용을 수정
-            savedMemos[index] = updatedMemo
-            UserDefaults.standard.set(savedMemos, forKey: "savedMemos")
+            // 해당 인덱스의 메모를 수정
+            editMemo(at: index, with: updatedMemo, isChecked: false)
             
             // 수정된 메모 내용을 업데이트하고 해당 셀만 리로드
             (self.navigationController?.viewControllers.first as? MainView)?.mainTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
@@ -90,21 +98,6 @@ private extension CreateViewController {
         
         // 수정 모드 종료
         isEditingMode = false
-    }
-    
-    // 새로운 메모 작성
-    @objc func finishButtonTappedNew() {
-        navigationController?.popViewController(animated: true)
-        
-        if isTextViewEdited {
-            
-            // savedMemos라는 배열을 불러와서, 추가하기
-            savedMemos.append(createView.createTextView.text)
-            
-            // 추가한 savedMemos를 저장하기
-            UserDefaults.standard.set(savedMemos, forKey: "savedMemos")
-        }
-        
     }
 }
 

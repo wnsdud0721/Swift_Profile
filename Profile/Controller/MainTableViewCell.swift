@@ -8,9 +8,17 @@
 import UIKit
 import SnapKit
 
+protocol MainTableViewCellDelegate: AnyObject {
+    func didTapCheckButton(in cell: MainTableViewCell)
+}
+
 class MainTableViewCell: UITableViewCell {
     
     static let identifier = "MainTableViewCell"
+    
+    weak var mainTableViewCellDelegate: MainTableViewCellDelegate?
+    
+    var indexPath: IndexPath?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,7 +35,6 @@ class MainTableViewCell: UITableViewCell {
     // Cell에 UILabel 추가
     let memoLabel: UILabel = {
         let label = UILabel()
-        label.text = "오늘 할 일"
         label.font = UIFont(name: "Apple SD Gothic Neo", size: 15)
         label.textColor = UIColor.black
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,17 +68,7 @@ class MainTableViewCell: UITableViewCell {
     
     // 체크버튼 눌렀을 때, 실행되는 함수
     @objc func checkButtonTapped() {
-        let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
-        if checkButton.isSelected {
-            checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)
-            checkButton.isSelected = false
-            memoLabel.attributedText = NSAttributedString(string: memoLabel.text ?? "")
-        }
-        else {
-            checkButton.setImage(UIImage(systemName: "checkmark.square.fill", withConfiguration: imageConfig), for: .normal)
-            checkButton.isSelected = true
-            memoLabel.attributedText = memoLabel.text?.strikeThrough()
-        }
+        mainTableViewCellDelegate?.didTapCheckButton(in: self)
     }
     
     // TableView의 경우, contentView 사용
@@ -95,6 +92,10 @@ class MainTableViewCell: UITableViewCell {
             make.leading.equalTo(checkButton.snp.trailing).offset(8)
             make.trailing.equalToSuperview().offset(-16)
         }
+    }
+    
+    override func prepareForReuse() {
+        memoLabel.text = ""
     }
 
 }

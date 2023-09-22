@@ -28,6 +28,7 @@
 		10438ECA2AB45E6E0056A407 /* ProfileDesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */; };
 		10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438ECB2AB461D40056A407 /* ProfileView.swift */; };
 		104B108C2ABC25860011B9D7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B108B2ABC25860011B9D7 /* String.swift */; };
+		104B108E2ABC7A020011B9D7 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B108D2ABC7A020011B9D7 /* UserDataManager.swift */; };
 		10CF3A422AB2D83C006EBC96 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		10438EC92AB45E6E0056A407 /* ProfileDesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignView.swift; sourceTree = "<group>"; };
 		10438ECB2AB461D40056A407 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		104B108B2ABC25860011B9D7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		104B108D2ABC7A020011B9D7 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
 		10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				10438EC52AB457610056A407 /* UserData.swift */,
+				104B108D2ABC7A020011B9D7 /* UserDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,7 +180,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					1003B4232AB162800044AC54 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -241,6 +244,7 @@
 				10438EBF2AB3FB6B0056A407 /* GalleryCollectionViewCell.swift in Sources */,
 				104B108C2ABC25860011B9D7 /* String.swift in Sources */,
 				1003B42A2AB162800044AC54 /* SceneDelegate.swift in Sources */,
+				104B108E2ABC7A020011B9D7 /* UserDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +306,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -362,6 +367,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

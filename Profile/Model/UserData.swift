@@ -13,12 +13,13 @@ struct UserProfile: Codable {
 }
 
 struct MemoItems: Codable {
-    var text: String
-    var isChecked: Bool
+    var text: String = ""
+    var isChecked: Bool = false
 }
 
-let defaults = UserDefaults.standard
+var memoItems = MemoItems()
+var memoArray = [MemoItems]()
 
-var savedMemos = UserDefaults.standard.stringArray(forKey: "savedMemos") ?? []
+let defaults = UserDefaults.standard
 
 let imageNames = ["picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7", "picture1", "picture2", "picture3", "picture4", "picture5", "picture6", "picture7"]
