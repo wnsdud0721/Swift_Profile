@@ -90,13 +90,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         mainTableViewCell.memoLabel.text = memoArray[indexPath.row].text
         
         mainTableViewCell.indexPath = indexPath
-        mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
+
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
-        print(memoArray[indexPath.row])
         if memoArray[indexPath.row].isChecked == false {
             mainTableViewCell.checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)
-//            mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
-//            mainTableViewCell.memoLabel.attributedText = mainTableViewCell.memoLabel.text?.removeStrikeThrough()
+            mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
         }
         
         else {

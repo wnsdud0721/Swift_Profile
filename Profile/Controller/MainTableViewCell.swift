@@ -32,6 +32,11 @@ class MainTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        memoLabel.attributedText = nil
+    }
+    
     // Cell에 UILabel 추가
     let memoLabel: UILabel = {
         let label = UILabel()
@@ -93,9 +98,4 @@ class MainTableViewCell: UITableViewCell {
             make.trailing.equalToSuperview().offset(-16)
         }
     }
-    
-    override func prepareForReuse() {
-        memoLabel.text = ""
-    }
-
 }
