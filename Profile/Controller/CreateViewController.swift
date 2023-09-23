@@ -74,11 +74,16 @@ private extension CreateViewController {
     @objc func finishButtonTappedNew() {
         navigationController?.popViewController(animated: true)
         
+//        if isTextViewEdited {
+//            let newMemoText = createView.createTextView.text
+//            
+//            // 새 메모를 생성하고 memoArray에 추가
+//            addNewMemo(newMemoText ?? "")
+//        }
         if isTextViewEdited {
             let newMemoText = createView.createTextView.text
             
-            // 새 메모를 생성하고 memoArray에 추가
-            addNewMemo(newMemoText ?? "")
+            addCoreNewMemo(newMemoText ?? "", false)
         }
     }
     
@@ -90,7 +95,8 @@ private extension CreateViewController {
            let index = editingMemoIndex {
             
             // 해당 인덱스의 메모를 수정
-            editMemo(at: index, with: updatedMemo, isChecked: false)
+            //editMemo(at: index, with: updatedMemo, isChecked: false)
+            editCoreMemo(at: index, with: updatedMemo, isChecked: false)
             
             // 수정된 메모 내용을 업데이트하고 해당 셀만 리로드
             (self.navigationController?.viewControllers.first as? MainView)?.mainTableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)

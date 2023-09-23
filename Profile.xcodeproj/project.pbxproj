@@ -29,6 +29,8 @@
 		10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10438ECB2AB461D40056A407 /* ProfileView.swift */; };
 		104B108C2ABC25860011B9D7 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B108B2ABC25860011B9D7 /* String.swift */; };
 		104B108E2ABC7A020011B9D7 /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104B108D2ABC7A020011B9D7 /* UserDataManager.swift */; };
+		105024ED2ABD33CE0002B85A /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105024EC2ABD33CE0002B85A /* CoreData.swift */; };
+		10C2C39A2ABD724D00B6DE9D /* CoreDataTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 10C2C3982ABD724D00B6DE9D /* CoreDataTask.xcdatamodeld */; };
 		10CF3A422AB2D83C006EBC96 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +58,8 @@
 		10438ECB2AB461D40056A407 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		104B108B2ABC25860011B9D7 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		104B108D2ABC7A020011B9D7 /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		105024EC2ABD33CE0002B85A /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		10C2C3992ABD724D00B6DE9D /* CoreDataTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataTask.xcdatamodel; sourceTree = "<group>"; };
 		10CF3A412AB2D83C006EBC96 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Regular.ttf"; path = "../../../../Downloads/Open_Sans/static/OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,8 +123,10 @@
 		10438EC42AB456F30056A407 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				10C2C3982ABD724D00B6DE9D /* CoreDataTask.xcdatamodeld */,
 				10438EC52AB457610056A407 /* UserData.swift */,
 				104B108D2ABC7A020011B9D7 /* UserDataManager.swift */,
+				105024EC2ABD33CE0002B85A /* CoreData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -232,6 +238,8 @@
 				10438ECC2AB461D40056A407 /* ProfileView.swift in Sources */,
 				102B97BD2ABB0DCF0078217A /* CreateViewController.swift in Sources */,
 				1003B42C2AB162800044AC54 /* MainViewController.swift in Sources */,
+				105024ED2ABD33CE0002B85A /* CoreData.swift in Sources */,
+				10C2C39A2ABD724D00B6DE9D /* CoreDataTask.xcdatamodeld in Sources */,
 				102B97BF2ABB13400078217A /* MainTableViewCell.swift in Sources */,
 				1003B4442AB185260044AC54 /* ProfileDesignViewController.swift in Sources */,
 				10438EC32AB42E8C0056A407 /* MainView.swift in Sources */,
@@ -483,6 +491,20 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		10C2C3982ABD724D00B6DE9D /* CoreDataTask.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				10C2C3992ABD724D00B6DE9D /* CoreDataTask.xcdatamodel */,
+			);
+			currentVersion = 10C2C3992ABD724D00B6DE9D /* CoreDataTask.xcdatamodel */;
+			name = CoreDataTask.xcdatamodeld;
+			path = ../Controller/CoreDataTask.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1003B41C2AB162800044AC54 /* Project object */;
 }

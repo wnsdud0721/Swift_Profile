@@ -30,7 +30,8 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        loadMemoItems()
+        //loadMemoItems()
+        loadCoreMemoItems()
         mainView.mainTableView.reloadData()
     }
 }
@@ -74,7 +75,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     // TableView 줄 개수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return memoArray.count
+        //return memoArray.count
+        return coreMemoArray.count
     }
     
     // TableView를 어떻게 보여줄 것인가
@@ -87,12 +89,23 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         mainTableViewCell.mainTableViewCellDelegate = self
         
         // 불러오기
-        mainTableViewCell.memoLabel.text = memoArray[indexPath.row].text
+        //mainTableViewCell.memoLabel.text = memoArray[indexPath.row].text
+        mainTableViewCell.memoLabel.text = coreMemoArray[indexPath.row].text
         
         mainTableViewCell.indexPath = indexPath
 
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
-        if memoArray[indexPath.row].isChecked == false {
+//        if memoArray[indexPath.row].isChecked == false {
+//            mainTableViewCell.checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)
+//            mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
+//        }
+//        
+//        else {
+//            mainTableViewCell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill", withConfiguration: imageConfig), for: .normal)
+//            mainTableViewCell.memoLabel.attributedText = mainTableViewCell.memoLabel.text?.strikeThrough()
+//        }
+        
+        if coreMemoArray[indexPath.row].isChecked == false {
             mainTableViewCell.checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)
             mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
         }
@@ -111,9 +124,11 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             (action, view, completion) in
             
             // 삭제하기
-            deleteMemo(at: indexPath.row) // 메모 삭제 함수 호출
+            //deleteMemo(at: indexPath.row) // 메모 삭제 함수 호출
+            deleteCoreMemo(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
-            loadMemoItems()
+            //loadMemoItems()
+            loadCoreMemoItems()
             completion(true)
         }
         
@@ -132,7 +147,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         let createVC = CreateViewController()
         
-        createVC.editingMemoText = memoArray[indexPath.row].text
+        //createVC.editingMemoText = memoArray[indexPath.row].text
+        createVC.editingMemoText = coreMemoArray[indexPath.row].text
         createVC.editingMemoIndex = indexPath.row
         
         createVC.isEditingMode = true
@@ -143,16 +159,28 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MainViewController: MainTableViewCellDelegate {
     func didTapCheckButton(in cell: MainTableViewCell) {
+//        if let indexPath = cell.indexPath {
+//            if memoArray[indexPath.row].isChecked == false {
+//                memoArray[indexPath.row].isChecked = true
+//            } else {
+//                memoArray[indexPath.row].isChecked = false
+//            }
+//        }
+//        
+//        saveMemoItems()
+//        loadMemoItems()
+        
         if let indexPath = cell.indexPath {
-            if memoArray[indexPath.row].isChecked == false {
-                memoArray[indexPath.row].isChecked = true
+            if coreMemoArray[indexPath.row].isChecked == false {
+                coreMemoArray[indexPath.row].isChecked = true
             } else {
-                memoArray[indexPath.row].isChecked = false
+                coreMemoArray[indexPath.row].isChecked = false
             }
         }
         
-        saveMemoItems()
-        loadMemoItems()
+        saveCoreMemoItems()
+        loadCoreMemoItems()
+        
         mainView.mainTableView.reloadData()
     }
 }

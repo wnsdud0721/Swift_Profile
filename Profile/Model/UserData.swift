@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 struct UserProfile: Codable {
     var userName: String
     var userAge: Int
 }
 
+// UserDefaults
 struct MemoItems: Codable {
     var text: String = ""
     var isChecked: Bool = false
