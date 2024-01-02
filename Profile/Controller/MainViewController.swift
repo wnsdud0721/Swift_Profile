@@ -95,15 +95,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         mainTableViewCell.indexPath = indexPath
 
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 20, weight: .light)
-//        if memoArray[indexPath.row].isChecked == false {
-//            mainTableViewCell.checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)
-//            mainTableViewCell.memoLabel.attributedText = NSAttributedString(string: mainTableViewCell.memoLabel.text ?? "")
-//        }
-//        
-//        else {
-//            mainTableViewCell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill", withConfiguration: imageConfig), for: .normal)
-//            mainTableViewCell.memoLabel.attributedText = mainTableViewCell.memoLabel.text?.strikeThrough()
-//        }
         
         if coreMemoArray[indexPath.row].isChecked == false {
             mainTableViewCell.checkButton.setImage(UIImage(systemName: "square", withConfiguration: imageConfig), for: .normal)

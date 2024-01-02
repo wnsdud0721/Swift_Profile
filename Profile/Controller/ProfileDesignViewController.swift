@@ -49,10 +49,12 @@ private extension ProfileDesignViewController {
 }
 
 extension ProfileDesignViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    // 몇 개
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageNames.count
     }
     
+    // 어떻게
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.identifier, for: indexPath) as? GalleryCollectionViewCell else { return UICollectionViewCell() }
         
@@ -64,6 +66,7 @@ extension ProfileDesignViewController: UICollectionViewDelegate, UICollectionVie
     }
 }
 
+// 크기
 extension ProfileDesignViewController: UICollectionViewDelegateFlowLayout {
     
     // CollectionView Cell의 사이즈
